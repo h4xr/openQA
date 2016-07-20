@@ -1,4 +1,4 @@
-openQA 
+openQA image:https://travis-ci.org/h4xr/openQA.svg?branch=master["Build Status", link="https://travis-ci.org/h4xr/openQA"] 
 ========================================================================================================================================================================================================================================
 
 openQA is a testing framework that allows you to test GUI applications on one

@@ -380,5 +380,11 @@ sub check_download_whitelist {
     return ();
 }
 
+sub remove_extra_whitespace {
+    my $str = shift;    
+    $str =~ s/ +/ /;
+    return $str;
+}
+
 1;
 # vim: set sw=4 et:
