@@ -383,9 +383,10 @@ sub check_download_whitelist {
 
 sub remove_extra_whitespace {
     my $str = shift;
-    $str =~ tr{\n}{ };
-    $str =~ tr{\t}{ };
-    $str =~ s/ +/ /;
+    # $str =~ tr{\n}{ };
+    # $str =~ tr{\t}{ };
+    # $str =~ s/ +/ /;
+    $str =~ s/\n\r\t\s//g;
     return $str;
 }
 
