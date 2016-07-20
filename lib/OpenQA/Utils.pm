@@ -32,6 +32,7 @@ $VERSION = sprintf "%d.%03d", q$Revision: 1.12 $ =~ /(\d+)/g;
   &asset_type_from_setting
   &check_download_url
   &check_download_whitelist
+  &remove_extra_whitespace
 );
 
 
@@ -381,7 +382,7 @@ sub check_download_whitelist {
 }
 
 sub remove_extra_whitespace {
-    my $str = shift;    
+    my $str = shift;
     $str =~ s/ +/ /;
     return $str;
 }

@@ -236,7 +236,7 @@ subtest 'jobs belonging to important builds are not cancelled by new iso post' =
     $ret = $t->get_ok('/api/v1/jobs?state=scheduled');
     my @jobs = @{$ret->tx->res->json->{jobs}};
     lj;
-    ok(!grep({ $_->{settings}->{BUILD} =~ '009[2]' } @jobs), 'no jobs from intermediate, not-important build');
+    ok(!grep({$_->{settings}->{BUILD} =~ '009[2]'} @jobs), 'no jobs from intermediate, not-important build');
     is(scalar @jobs, 21, 'only the important jobs, jobs from the current build and the important build are scheduled');
 };
 
