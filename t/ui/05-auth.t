@@ -18,6 +18,7 @@ BEGIN {
 }
 
 use Mojo::Base -strict;
+use Mojo::Util 'trim';
 use Test::More;
 use Test::Mojo;
 use Test::Warnings;
@@ -30,7 +31,7 @@ my $t = Test::Mojo->new('OpenQA::WebAPI');
 
 #
 # No login, no user-info and no api_keys
-is($t->get_ok('/tests')->status_is(200)->tx->res->dom->at('#user-action')->all_text, 'Login', 'no-one logged in');
+is(trim($t->get_ok('/tests')->status_is(200)->tx->res->dom->at('#user-action')->all_text), 'Login', 'no-one logged in');
 $t->get_ok('/api_keys')->status_is(302);
 
 # So let's log in as an unpriviledged user
