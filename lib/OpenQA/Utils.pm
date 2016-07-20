@@ -383,6 +383,7 @@ sub check_download_whitelist {
 
 sub remove_extra_whitespace {
     my $str = shift;
+    $str =~ tr{\n}{ };
     $str =~ s/ +/ /;
     return $str;
 }
