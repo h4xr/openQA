@@ -386,7 +386,7 @@ sub remove_extra_whitespace {
     # $str =~ tr{\n}{ };
     # $str =~ tr{\t}{ };
     # $str =~ s/ +/ /;
-    $str =~ s/\s+//g;
+    $str =~ s/\s+/ /g;
     return $str;
 }
 
